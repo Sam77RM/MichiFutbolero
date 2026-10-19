@@ -68,12 +68,10 @@ public class Resultado extends javax.swing.JFrame {
         getContentPane().add(ganador, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 190, 220));
 
         tituloPerdedor.setFont(new java.awt.Font("Lucida Sans Typewriter", 1, 36)); // NOI18N
-        tituloPerdedor.setForeground(new java.awt.Color(0, 0, 0));
         tituloPerdedor.setText("Pierde!");
         getContentPane().add(tituloPerdedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, -1));
 
         tituloGanador.setFont(new java.awt.Font("Lucida Sans Typewriter", 1, 36)); // NOI18N
-        tituloGanador.setForeground(new java.awt.Color(0, 0, 0));
         tituloGanador.setText("Gana!");
         getContentPane().add(tituloGanador, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, -1));
 

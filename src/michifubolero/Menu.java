@@ -29,23 +29,32 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnModoVersus = new javax.swing.JButton();
-        btnModoBot = new javax.swing.JButton();
-        modoVersus = new javax.swing.JLabel();
+        barraDesplazar = new javax.swing.JScrollPane();
+        Panel = new javax.swing.JPanel();
         modoBot = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
+        modoVersus = new javax.swing.JLabel();
+        btnModoBot = new javax.swing.JButton();
+        btnModoVersus = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnModoVersus.setBackground(new java.awt.Color(153, 0, 51));
-        btnModoVersus.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btnModoVersus.setForeground(new java.awt.Color(255, 255, 255));
-        btnModoVersus.setText("vs Amigo");
-        btnModoVersus.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        btnModoVersus.addActionListener(this::btnModoVersusActionPerformed);
-        getContentPane().add(btnModoVersus, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 710, 130, 30));
+        barraDesplazar.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        barraDesplazar.setToolTipText("");
+        barraDesplazar.setAlignmentX(0.0F);
+
+        Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        modoBot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagenes/opciones/vsBot1.png"))); // NOI18N
+        Panel.add(modoBot, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 580, 150, 120));
+
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagenes/logos/logo.png"))); // NOI18N
+        Panel.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 510, 510));
+
+        modoVersus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagenes/opciones/vsOtro1.png"))); // NOI18N
+        Panel.add(modoVersus, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 580, -1, 120));
 
         btnModoBot.setBackground(new java.awt.Color(0, 51, 204));
         btnModoBot.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -53,19 +62,22 @@ public class Menu extends javax.swing.JFrame {
         btnModoBot.setText("vs Bot");
         btnModoBot.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         btnModoBot.addActionListener(this::btnModoBotActionPerformed);
-        getContentPane().add(btnModoBot, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 710, 130, 30));
+        Panel.add(btnModoBot, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 710, 130, 30));
 
-        modoVersus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagenes/opciones/vsOtro1.png"))); // NOI18N
-        getContentPane().add(modoVersus, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 580, -1, 120));
-
-        modoBot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagenes/opciones/vsBot1.png"))); // NOI18N
-        getContentPane().add(modoBot, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 580, 150, 120));
-
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagenes/logos/logo.png"))); // NOI18N
-        getContentPane().add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 510, 510));
+        btnModoVersus.setBackground(new java.awt.Color(153, 0, 51));
+        btnModoVersus.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnModoVersus.setForeground(new java.awt.Color(255, 255, 255));
+        btnModoVersus.setText("vs Amigo");
+        btnModoVersus.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        btnModoVersus.addActionListener(this::btnModoVersusActionPerformed);
+        Panel.add(btnModoVersus, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 710, 130, 30));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagenes/fondos/fondo1.png"))); // NOI18N
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, -1));
+        Panel.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, -1));
+
+        barraDesplazar.setViewportView(Panel);
+
+        getContentPane().add(barraDesplazar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -110,6 +122,8 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Panel;
+    private javax.swing.JScrollPane barraDesplazar;
     private javax.swing.JButton btnModoBot;
     private javax.swing.JButton btnModoVersus;
     private javax.swing.JLabel fondo;

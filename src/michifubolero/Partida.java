@@ -31,25 +31,27 @@ public class Partida extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        iconoNotificacion = new javax.swing.JLabel();
-        notificacion = new javax.swing.JLabel();
+        barraDesplazar = new javax.swing.JScrollPane();
+        Panel = new javax.swing.JPanel();
         personajeJugando = new javax.swing.JLabel();
-        ScrollMichi = new javax.swing.JScrollPane();
-        matriz = new javax.swing.JTable();
-        BarraTiempo = new javax.swing.JProgressBar();
-        MarcadorLocal = new javax.swing.JLabel();
-        MarcadorVisita = new javax.swing.JLabel();
-        marcadorSimbolo = new javax.swing.JLabel();
-        Buscador = new javax.swing.JTextField();
-        btnBuscador = new javax.swing.JButton();
+        frase1 = new javax.swing.JLabel();
         ScrollBusqueda = new javax.swing.JScrollPane();
         TablaBusqueda = new javax.swing.JTable();
-        frase1 = new javax.swing.JLabel();
-        frase2 = new javax.swing.JLabel();
+        marcadorSimbolo = new javax.swing.JLabel();
+        ScrollMichi = new javax.swing.JScrollPane();
+        matriz = new javax.swing.JTable();
         tituloMarcador = new javax.swing.JLabel();
         tituloTemporizador = new javax.swing.JLabel();
-        valorTiempo = new javax.swing.JLabel();
+        iconoNotificacion = new javax.swing.JLabel();
+        btnBuscador = new javax.swing.JButton();
+        notificacion = new javax.swing.JLabel();
+        MarcadorVisita = new javax.swing.JLabel();
+        Buscador = new javax.swing.JTextField();
+        BarraTiempo = new javax.swing.JProgressBar();
+        frase2 = new javax.swing.JLabel();
+        MarcadorLocal = new javax.swing.JLabel();
         Titulo = new javax.swing.JLabel();
+        valorTiempo = new javax.swing.JLabel();
         Subtitulo = new javax.swing.JLabel();
         Logo = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
@@ -57,20 +59,39 @@ public class Partida extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        iconoNotificacion.setBackground(new java.awt.Color(255, 255, 255));
-        iconoNotificacion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        iconoNotificacion.setForeground(new java.awt.Color(0, 0, 0));
-        iconoNotificacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagenes/opciones/notificacion.png"))); // NOI18N
-        getContentPane().add(iconoNotificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 700, 20, 30));
+        barraDesplazar.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        barraDesplazar.setAlignmentX(0.0F);
 
-        notificacion.setBackground(new java.awt.Color(255, 255, 255));
-        notificacion.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        notificacion.setForeground(new java.awt.Color(255, 255, 255));
-        notificacion.setText("Perdiste El turno!");
-        getContentPane().add(notificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 700, 140, 30));
+        Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         personajeJugando.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagenes/personajes/personaje3/Pregunta3.png"))); // NOI18N
-        getContentPane().add(personajeJugando, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 500, 130, 130));
+        Panel.add(personajeJugando, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 500, 130, 130));
+
+        frase1.setBackground(new java.awt.Color(51, 51, 51));
+        frase1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        frase1.setForeground(new java.awt.Color(255, 255, 255));
+        frase1.setText("Busca por nombre o apellido el jugador:");
+        Panel.add(frase1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, -1, 20));
+
+        TablaBusqueda.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        ScrollBusqueda.setViewportView(TablaBusqueda);
+
+        Panel.add(ScrollBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 700, 460, 80));
+
+        marcadorSimbolo.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        marcadorSimbolo.setForeground(new java.awt.Color(255, 255, 255));
+        marcadorSimbolo.setText("-");
+        Panel.add(marcadorSimbolo, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, -1, 31));
 
         matriz.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         matriz.setModel(new javax.swing.table.DefaultTableModel(
@@ -86,93 +107,82 @@ public class Partida extends javax.swing.JFrame {
         ));
         ScrollMichi.setViewportView(matriz);
 
-        getContentPane().add(ScrollMichi, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 470, 440));
-        getContentPane().add(BarraTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 80, 18));
+        Panel.add(ScrollMichi, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 470, 440));
 
-        MarcadorLocal.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        MarcadorLocal.setForeground(new java.awt.Color(255, 255, 255));
-        MarcadorLocal.setText("1");
-        getContentPane().add(MarcadorLocal, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 21, 63));
+        tituloMarcador.setBackground(new java.awt.Color(255, 255, 255));
+        tituloMarcador.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        tituloMarcador.setForeground(new java.awt.Color(255, 255, 255));
+        tituloMarcador.setText("Marcador");
+        Panel.add(tituloMarcador, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, -1));
 
-        MarcadorVisita.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        MarcadorVisita.setForeground(new java.awt.Color(255, 255, 255));
-        MarcadorVisita.setText("1");
-        getContentPane().add(MarcadorVisita, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 40, 21, 65));
+        tituloTemporizador.setBackground(new java.awt.Color(255, 255, 255));
+        tituloTemporizador.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        tituloTemporizador.setForeground(new java.awt.Color(255, 255, 255));
+        tituloTemporizador.setText("Temporizador");
+        Panel.add(tituloTemporizador, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, -1, -1));
 
-        marcadorSimbolo.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        marcadorSimbolo.setForeground(new java.awt.Color(255, 255, 255));
-        marcadorSimbolo.setText("-");
-        getContentPane().add(marcadorSimbolo, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, -1, 31));
-        getContentPane().add(Buscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 620, 181, 30));
+        iconoNotificacion.setBackground(new java.awt.Color(255, 255, 255));
+        iconoNotificacion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        iconoNotificacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagenes/opciones/notificacion.png"))); // NOI18N
+        Panel.add(iconoNotificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 700, 20, 30));
 
         btnBuscador.setBackground(new java.awt.Color(0, 51, 0));
         btnBuscador.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscador.setText("Buscar");
         btnBuscador.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnBuscador.addActionListener(this::btnBuscadorActionPerformed);
-        getContentPane().add(btnBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 620, 80, 30));
+        Panel.add(btnBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 620, 80, 30));
 
-        TablaBusqueda.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        ScrollBusqueda.setViewportView(TablaBusqueda);
+        notificacion.setBackground(new java.awt.Color(255, 255, 255));
+        notificacion.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        notificacion.setForeground(new java.awt.Color(255, 255, 255));
+        notificacion.setText("Perdiste El turno!");
+        Panel.add(notificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 700, 140, 30));
 
-        getContentPane().add(ScrollBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 700, 460, 80));
-
-        frase1.setBackground(new java.awt.Color(51, 51, 51));
-        frase1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        frase1.setForeground(new java.awt.Color(255, 255, 255));
-        frase1.setText("Busca por nombre o apellido el jugador:");
-        getContentPane().add(frase1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, -1, 20));
+        MarcadorVisita.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        MarcadorVisita.setForeground(new java.awt.Color(255, 255, 255));
+        MarcadorVisita.setText("1");
+        Panel.add(MarcadorVisita, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 40, 21, 65));
+        Panel.add(Buscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 620, 181, 30));
+        Panel.add(BarraTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 80, 18));
 
         frase2.setBackground(new java.awt.Color(51, 51, 51));
         frase2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         frase2.setForeground(new java.awt.Color(255, 255, 255));
         frase2.setText("Selecciona el jugador para poder usarlo:");
-        getContentPane().add(frase2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 670, -1, -1));
+        Panel.add(frase2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 670, -1, -1));
 
-        tituloMarcador.setBackground(new java.awt.Color(255, 255, 255));
-        tituloMarcador.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        tituloMarcador.setForeground(new java.awt.Color(255, 255, 255));
-        tituloMarcador.setText("Marcador");
-        getContentPane().add(tituloMarcador, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, -1));
-
-        tituloTemporizador.setBackground(new java.awt.Color(255, 255, 255));
-        tituloTemporizador.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        tituloTemporizador.setForeground(new java.awt.Color(255, 255, 255));
-        tituloTemporizador.setText("Temporizador");
-        getContentPane().add(tituloTemporizador, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, -1, -1));
-
-        valorTiempo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        valorTiempo.setForeground(new java.awt.Color(255, 255, 255));
-        valorTiempo.setText("60''");
-        getContentPane().add(valorTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, -1, -1));
+        MarcadorLocal.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        MarcadorLocal.setForeground(new java.awt.Color(255, 255, 255));
+        MarcadorLocal.setText("1");
+        Panel.add(MarcadorLocal, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 21, 63));
 
         Titulo.setBackground(new java.awt.Color(255, 255, 255));
         Titulo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         Titulo.setForeground(new java.awt.Color(255, 255, 255));
         Titulo.setText("Michi-Futbolero");
-        getContentPane().add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, 47));
+        Panel.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, 47));
+
+        valorTiempo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        valorTiempo.setForeground(new java.awt.Color(255, 255, 255));
+        valorTiempo.setText("60''");
+        Panel.add(valorTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, -1, -1));
 
         Subtitulo.setBackground(new java.awt.Color(255, 255, 255));
         Subtitulo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Subtitulo.setForeground(new java.awt.Color(255, 255, 255));
         Subtitulo.setText("3 en raya inspirado en el mundial 2026");
-        getContentPane().add(Subtitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, -1, 47));
+        Panel.add(Subtitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, -1, 47));
 
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagenes/logos/logo2Resum.png"))); // NOI18N
-        getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 80, 80));
+        Panel.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 80, 80));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagenes/fondos/fondo2.png"))); // NOI18N
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 810));
+        Panel.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 810));
+
+        barraDesplazar.setViewportView(Panel);
+
+        getContentPane().add(barraDesplazar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -222,11 +232,13 @@ public class Partida extends javax.swing.JFrame {
     private javax.swing.JLabel Logo;
     private javax.swing.JLabel MarcadorLocal;
     private javax.swing.JLabel MarcadorVisita;
+    private javax.swing.JPanel Panel;
     private javax.swing.JScrollPane ScrollBusqueda;
     private javax.swing.JScrollPane ScrollMichi;
     private javax.swing.JLabel Subtitulo;
     private javax.swing.JTable TablaBusqueda;
     private javax.swing.JLabel Titulo;
+    private javax.swing.JScrollPane barraDesplazar;
     private javax.swing.JButton btnBuscador;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel frase1;
