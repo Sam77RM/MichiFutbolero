@@ -18,6 +18,7 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
         setLocationRelativeTo(null); //centrar
+        barraDesplazar.getVerticalScrollBar().setUnitIncrement(20); //Aumentar unidades de deplazamiento del scrollbar
     }
 
     /**
